@@ -28,7 +28,7 @@ steps:
       scriptLocation: 'inlineScript'
       inlineScript: |
         az storage blob upload \
-                  --account-name ImageBuilderStrg \
+                  --account-name imagebuilderstrg \
                   --container-name scripts \
                   --name Install-Applications.ps1 \
                   --file Install-Applications.ps1
