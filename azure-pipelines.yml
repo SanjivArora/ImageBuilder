@@ -11,13 +11,13 @@ pr: none
 pool:
   vmImage: ubuntu-latest
 
-Variable:
+variables:
 - name: Location
   value: 'Australia East'
 - name: ResourceGroup
   value: 'ImageBuilder-RG'
 - name: ImageTemplateName
-  value:'imageTemplateWin10Multi'
+  value: 'imageTemplateWin10Multi'
 
 steps:
   - task: AzureCLI@2
