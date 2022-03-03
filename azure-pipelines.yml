@@ -13,7 +13,7 @@ pool:
 
 variables:
 - name: Location
-  value: 'Australia East'
+  value: 'AustraliaEast'
 - name: ResourceGroup
   value: 'ImageBuilder-RG'
 - name: ImageTemplateName
