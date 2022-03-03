@@ -11,7 +11,6 @@
 # https://community.notepad-plus-plus.org/post/38160
 
 
-
 #region Set logging 
 $logFile = "c:\temp\" + (get-date -format 'yyyyMMdd') + '_softwareinstall.log'
 function Write-Log {
