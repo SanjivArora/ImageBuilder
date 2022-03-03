@@ -27,11 +27,11 @@
         "identity": {
           "type": "UserAssigned",
           "userAssignedIdentities": {
-            "<imgBuilderId>": {}
+            "<UserAssignedID>": {}
           }
         },
         "properties": {
-          "buildTimeoutInMinutes": 30,
+          "buildTimeoutInMinutes": 90,
           "vmProfile": {
             "vmSize": "Standard_D2_v2",
             "osDiskSizeGB": 127
@@ -40,7 +40,7 @@
             "type": "PlatformImage",
             "publisher": "MicrosoftWindowsDesktop",
             "offer": "Windows-10",
-            "sku": "20h1-evd",
+            "sku": "20h2-evd",
             "version": "latest"
           },
           "customize": [
@@ -53,22 +53,37 @@
                 "Expand-Archive 'c:\\temp\\azcopy.zip' 'c:\\temp'",
                 "copy-item 'C:\\temp\\azcopy_windows_amd64_*\\azcopy.exe\\' -Destination 'c:\\temp'"
               ]
+            },
+            {
+              "type": "PowerShell",
+              "name": "GetArchive",
+              "inline": [
+                "c:\\temp\\azcopy.exe copy '<ArchiveSource>' c:\\temp\\software.zip",
+                "Expand-Archive 'c:\\temp\\software.zip' c:\\temp"
+              ]
+            },
+            {
+              "type": "PowerShell",
+              "runElevated": true,
+              "name": "RunPoShInstall",
+              "scriptUri": "<ScriptSource>"
             }
           ],
           "distribute": [
             {
               "type": "SharedImage",
-              "imageId": "/subscriptions/251b01ef-d79c-459a-96ff-2e2ff79ac07f/resourceGroups/ImageBuilder-RG/providers/Microsoft.Compute/images/TestImage",
-              "location": "AustraliaEast",
+              "galleryImageId": "<SharedImageGalleryID>",
               "runOutputName": "win10Client",
               "artifactTags": {
-                "source": "azVmImageBuilder",
-                "baseosimg": "windows10Multi"
-              }
+                "environment": "Lab",
+                "Owner": "IT"
+              },
+              "replicationRegions": [
+                "CentralUS"
+              ]
             }
           ]
         }
       }
     ]
   }
-  
