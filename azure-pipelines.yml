@@ -17,7 +17,7 @@ variables:
 - name: ResourceGroup
   value: 'ImageBuilder-RG'
 - name: ImageTemplateName
-  value: 'imageTemplateWin10Multi'
+  value: 'Win10Multi'
 
 steps:
   - task: AzureCLI@2
