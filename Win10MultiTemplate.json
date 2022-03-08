@@ -27,7 +27,7 @@
         "identity": {
           "type": "UserAssigned",
           "userAssignedIdentities": {
-            "/subscriptions/251b01ef-d79c-459a-96ff-2e2ff79ac07f/resourcegroups/ImageBuilder-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aibIdentity1646360821": {}
+            "/subscriptions/251b01ef-d79c-459a-96ff-2e2ff79ac07f/resourceGroups/ImageBuilder-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aibIdentity1646704566": {}
           }
         },
         "properties": {
